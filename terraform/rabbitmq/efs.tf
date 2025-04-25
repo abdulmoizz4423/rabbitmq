@@ -8,8 +8,8 @@ resource "aws_efs_file_system" "rabbitmq-fs" {
   }
 }
 
-resource "aws_efs_mount_target" "rabbitmq_mt" {
-
-  file_system_id = aws_efs_file_system.rabbitmq-fs.id
-  subnet_id      = data.aws_subnet.main.id
+resource "aws_efs_mount_target" "alpha" {
+  file_system_id  = aws_efs_file_system.rabbitmq-fs.id
+  subnet_id       = data.aws_subnet.main.id
+  security_groups = [data.aws_security_group.rabbitmq.id]
 }

@@ -14,7 +14,7 @@ resource "aws_ecs_service" "rabbitmq" {
   launch_type     = "FARGATE"
 
   network_configuration {
-    subnets          = [data.aws_subnet.main.id, data.aws_subnet.secondary.id]
+    subnets          = [data.aws_subnet.main.id]
     security_groups  = [data.aws_security_group.rabbitmq.id]
     assign_public_ip = true
   }
