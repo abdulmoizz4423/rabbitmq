@@ -61,7 +61,7 @@ resource "aws_ecs_task_definition" "rabbitmq_task" {
   volume {
     name = "green-one"
     efs_volume_configuration {
-      file_system_id = aws_efs_file_system.rabbitmq_fs.id
+      file_system_id = aws_efs_file_system.rabbitmq-fs.id
       root_directory = "/"
     }
   }
