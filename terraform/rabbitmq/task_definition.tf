@@ -1,7 +1,7 @@
 # RabbitMQ
 
 data "aws_iam_role" "ecs_role" {
-  name = "ecs_role"
+  name = "ecsTaskExecutionRole"
 }
 
 resource "aws_ecs_task_definition" "rabbitmq_task" {
@@ -16,7 +16,7 @@ resource "aws_ecs_task_definition" "rabbitmq_task" {
   container_definitions = jsonencode([
     {
       name              = "rabbitmq"
-      image             = "595040564260.dkr.ecr.us-east-1.amazonaws.com/rabbitmq:latest"
+      image             = "084828598848.dkr.ecr.us-east-1.amazonaws.com/rabbitmq:latest"
       cpu               = 1024
       memory            = 3072
       memoryReservation = 1024

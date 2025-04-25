@@ -1,20 +1,20 @@
 data "aws_subnet" "main" {
   filter {
     name   = "tag:Name"
-    values = ["Main"]
+    values = ["second"]
   }
 }
 
 data "aws_subnet" "secondary" {
   filter {
     name   = "tag:Name"
-    values = ["Secondary"]
+    values = ["first"]
   }
 }
 
 data "aws_vpc" "main" {
   filter {
     name   = "tag:Name"
-    values = ["main"]
+    values = ["default"]
   }
 }

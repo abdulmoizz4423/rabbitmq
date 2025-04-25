@@ -1,5 +1,4 @@
 # RabbitMQ
-
 data "aws_security_group" "rabbitmq" {
   filter {
     name   = "group-name"
