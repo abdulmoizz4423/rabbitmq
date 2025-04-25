@@ -1,4 +1,4 @@
-name: Preview Infrastructure
+name: RabbitMQ
 
 on:
   workflow_dispatch:
